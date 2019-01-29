@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: runar0/docker-gcc-nasm-cmake
+    steps:
+      - checkout
+      - run:
+          name: Download BATS
+          command: curl -LkSs https://api.github.com/repos/bats-core/bats-core/tarball -o master.tar.gz
+      - run:
+          name: Install BATS
+          command: tar -xzf master.tar.gz && cd bats-core-bats-core-* && ./install.sh /usr/local && cd ..
+      - run:
+          name: CMake
+          command: mkdir build && cd build && cmake .. && make
+      - run:
+          name: Test
+          command: bats test/test.bats

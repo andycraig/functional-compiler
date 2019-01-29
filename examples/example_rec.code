@@ -1,0 +1,10 @@
+(def plus2 (lambda x y (plus x y)))
+
+(defrec f
+    (lambda x 
+        (if
+            (equals x 1)
+            1
+            (plus2 x (f (minus x 1))))))
+
+(f 3)                                                ; Prints 6

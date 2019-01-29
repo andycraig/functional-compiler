@@ -1,0 +1,4 @@
+; Comments start with semicolons
+; The last expression in the code file is printed
+(let inc (λ x (plus x 1))
+    (inc 1))

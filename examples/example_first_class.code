@@ -1,0 +1,5 @@
+(let make-adder 
+    (λ x                       ; A function that returns a function
+        (λ y (plus x y)))      ; Creates a closure over x
+    (let add5 (make-adder 5)
+        (add5 3)))             ; Prints '8'

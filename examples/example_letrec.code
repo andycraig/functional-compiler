@@ -1,0 +1,5 @@
+(letrec f (lambda x 
+			(if (equals x 0)
+				x
+				(f (minus x 1))))
+	(f 3))

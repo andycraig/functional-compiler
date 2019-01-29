@@ -1,0 +1,12 @@
+(def compose 
+    (λ f g
+        (λ x (f (g x)))))
+
+(def inc 
+    (λ x (plus x 1)))
+
+(def double
+    (λ x (plus x x)))
+
+(let double-inc (compose double inc)
+    (double-inc 1))                     ; Outputs '4'

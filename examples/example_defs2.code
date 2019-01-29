@@ -1,0 +1,7 @@
+(def one 
+	(lambda 1))
+	
+(def constantly-one
+	(lambda (one)))
+
+(constantly-one 3)

@@ -1,0 +1,7 @@
+(def inc 
+	(lambda x (plus x 1)))
+	
+(def double
+	(lambda x (plus x x)))
+
+(double (inc 3))

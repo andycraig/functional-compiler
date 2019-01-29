@@ -1,0 +1,18 @@
+(defrec mult_aux                                       ; Use 'defrec' to define a recursive function
+    (lambda x y acc
+        (if 
+            (equals x 1)
+            acc
+            (mult_aux (minus x 1) y (plus acc y)))))   ; Recursion happens here
+
+(def mult                                              ; Wrapper for recursive function
+    (lambda x y (mult_aux x y y)))          
+    
+(defrec fac
+    (lambda x 
+        (if
+            (equals x 1)
+            1
+            (mult x (fac (minus x 1))))))
+
+(fac 5)                                                ; Prints 120
